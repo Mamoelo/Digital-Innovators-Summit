@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Innovators Summit: Coming Soon</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/PNGG.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            background: linear-gradient(135deg, #3b82f6 0%, #9333ea 100%);
+        }
+        body {
+            display: block;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            margin-top: 20vh;
+        }
+        img.logo {
+            max-width: 200px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        a.poster-link {
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            outline: none;
+        }
+        a.poster-link::after {
+            content: '🔗';
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            font-size: 1.5rem;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+        img.poster {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+            border: 2px solid transparent;
+            display: block;
+        }
+        /*img.poster:*/
+        a.poster-link:hover::after {
+            opacity: 1;
+        }
+        a.poster-link:hover img.poster {
+            transform: scale(1.03);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+            border-color: #fff;
+        }
+        h1 {
+            font-size: 2rem;
+            margin: 0;
+            font-weight: 700;
+        }
+        p.lead {
+            font-size: 1.25rem;
+            margin: 10px 0 0;
+            font-weight: 600;
+        }
+        .summary {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            line-height: 1.6;
+            text-align: left;
+        }
+        .summary p {
+            margin: 15px 0;
+        }
+        .countdown {
+            font-size: 2rem;
+            margin: 30px 0;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="LOGO PNG.png" alt="Digital Innovators Summit Logo" class="logo">
+        <h1>Digital Innovators Summit</h1>
+        <h2>Lesotho</h2>
+        <p class="lead">Empowering Truth in the Age of AI</p>
+        <div class="summary">
+            <p>Aligned with the national digital transformation strategy's vision for 2030, the Digital Innovators Summit is more than an event — it is a step toward creating a digitally empowered society. By providing youth with critical digital skills, the summit strengthens Lesotho's workforce, fosters innovation, and enhances resilience in the face of misinformation and economic challenges.</p>
+            <p>In a nation where digital transformation holds the key to sustainable growth, the summit serves as a catalyst for change, equipping young Basotho to lead in an interconnected, technology-driven world. This initiative ensures that no one is left behind as Lesotho transitions into a competitive, inclusive, and thriving digital economy.</p>
+        </div>
+        <h2>Coming Soon . . .</h2>
+        <a href="https://web.facebook.com/share/p/16itpPUvpH/" target="_blank" rel="noopener noreferrer" class="poster-link">
+            <img src="PCon.jpg" alt="Digital Innovators Summit Poster" class="poster">
+        </a>
+        <div id="countdown" class="countdown">Loading...</div>
+    </div>
+
+    <script>
+        // Set target date/time in Lesotho timezone (UTC+2)
+        const presDate = new Date('2025-08-25T10:00:00+02:00').getTime();
+
+        // Redirect a few minutes after the start
+        const redirectDelay = 60 * 60 * 1000; 
+        const redirectDate = presDate + redirectDelay;
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            if (now >= redirectDate) {
+                // After the delay, navigate to the next page
+                window.location.href = '../index.html';
+                return;
+            }
+            if (now >= presDate) {
+                // During the press conference window, show both lines
+                const remaining = redirectDate - now;
+                const days2 = Math.floor(remaining / (1000 * 60 * 60 * 24));
+                const hours2 = Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes2 = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds2 = Math.floor((remaining % (1000 * 60)) / 1000);
+                document.getElementById('countdown').innerHTML =
+                    'Press conference is live!<br>Launch in ' + days2 + 'd ' + hours2 + 'h ' + minutes2 + 'm ' + seconds2 + 's';
+                return;
+            }
+            // Before the press conference: show countdown
+            const distance = presDate - now;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown').textContent =
+                days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's';
+        }
+
+        // Update every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>

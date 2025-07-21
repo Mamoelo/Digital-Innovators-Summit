@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Digital Innovators Summit</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/PNGG.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Common CSS -->
+    <!-- <link rel="stylesheet" href="css/common.css"> -->
+    
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Header -->
+    <header class="main-header sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="logo.jpeg" alt="SkyAlpha HD">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active-home" href="register.html">
+                                <span class="nav-link-inner">Registration</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="summitsDropdown" role="button" data-bs-toggle="dropdown">
+                                Summits
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="2024Summit.html">2024 Summit</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="past-summits.html">All Summits</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="live.html">Live</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="eventDropdown" role="button" data-bs-toggle="dropdown">
+                                Event
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="live.html">Live</a></li>
+                                <li><a class="dropdown-item" href="sessions.html">Sessions</a></li>
+                                <li><a class="dropdown-item" href="schedule.html">Schedule</a></li>
+                                <li><a class="dropdown-item" href="speakers.html">Speakers</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="universities.html">Universities</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="partnersDropdown" role="button" data-bs-toggle="dropdown">
+                                Partners
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="universities.html">Universities</a></li>
+                                <li><a class="dropdown-item" href="partners.html">Organizations</a></li>
+                                <li><a class="dropdown-item" href="sponsors.html">Sponsors</a></li>
+                                <li><a class="dropdown-item" href="collaborators.html">Collaborators</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" data-bs-toggle="dropdown">
+                                Contact
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="contact.html">Contact Us</a></li>
+                                <li><a class="dropdown-item" href="team.html">Our Team</a></li>
+                                <li><a class="dropdown-item" href="faq.html">FAQs</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                    </ul>
+                    <a href="index.html" class="btn btn-primary ms-lg-3">Home</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Registration Section -->
+    <section class="registration-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="registration-card animate__animated animate__fadeInUp">
+                        <div class="registration-header">
+                            <h2 class="animate__animated animate__fadeInDown">Register for the Summit</h2>
+                        </div>
+                        <div class="registration-body">
+                            <form id="registration-form" class="mt-4" method="POST" action="register.php" novalidate>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                    <input name="firstName" type="text" class="form-control" placeholder="First Name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <input name="lastName"  type="text" class="form-control" placeholder="Last Name" required>
+                                    </div>
+                                    <div class="col-12">
+                                    <input name="email"     type="email" class="form-control" placeholder="Email" required>
+                                    </div>
+                                    <div class="col-12">
+                                    <select class="form-select" name="registration_type" required>
+                                        <option selected disabled>Select Registration Type</option>
+                                        <option>University Representative</option>
+                                        <option>Student</option>
+                                        <option>Industry Professional</option>
+                                        <option>Government Official</option>
+                                        <option>Press/Media</option>
+                                    </select>
+                                    </div>
+                                    <div class="col-12">
+                                    <div class="form-check">
+                                        <input name="agreeTnC" class="form-check-input" type="checkbox" id="termsCheck" required>
+                                        <label class="form-check-label" for="termsCheck">
+                                        I agree to the <a href="#" class="text-primary">Terms & Conditions</a>
+                                        </label>
+                                    </div>
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                    <button type="submit" class="btn btn-primary btn-lg w-100 py-3">
+                                        Complete Registration
+                                    </button>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- Success Modal -->
+                            <div class="modal fade" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="thankYouModalLabel">Registration Complete</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Thank you for registering for the summit! ðŸŽ‰<br>Weâ€™ve received your details.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <a href="https://www.skyalphahd.com" target="_blank" rel="noopener noreferrer">
+                        <img src="images/logos/skyalpha.png" alt="SkyAlpha HD" class="footer-logo">
+                    </a>
+                    <p class="footer-about">Aligned with Lesotho's National Digital Transformation Strategy, the Digital Innovators Summit is a movement toward creating a digitally empowered society.</p>
+                    <div class="social-links d-flex">
+                        <a href="https://www.facebook.com/DigitalInnovatorsSummitLesotho" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/DIS_Lesotho2025" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/digitalinnovatorslesotho" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/digital-innovators-summit-lesotho" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/c/DigitalInnovatorsSummitLesotho" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Summits</h5>
+                        <ul>
+                            <li><a href="2024Summit.html">2024 Summit</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Event</h5>
+                        <ul>
+                            <li><a href="schedule.html">Schedule</a></li>
+                            <li><a href="speakers.html">Speakers</a></li>
+                            <li><a href="sessions.html">Sessions</a></li>
+                            <li><a href="live.html">Live Stream</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Partners</h5>
+                        <ul>
+                            <li><a href="universities.html">Universities</a></li>
+                            <li><a href="partners.html">Organizations</a></li>
+                            <li><a href="sponsors.html">Sponsors</a></li>
+                            <li><a href="collaborators.html">Collaborators</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4">
+                    <div class="footer-links">
+                        <h5>Contact</h5>
+                        <ul>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="team.html">Our Team</a></li>
+                            <li><a href="register.html">Register</a></li>
+                            <li><a href="faq.html">FAQs</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="copyright mb-3 mb-md-0">Â© 2025 Digital Innovators Summit. All rights reserved.</p>
+                        </div>
+                        <div class="col-md-6 text-md-end">
+                            <a href="privacy.html" class="text-white-50 me-3">Privacy Policy</a>
+                            <a href="terms.html" class="text-white-50">Terms of Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Back to top button
+            const backToTopButton = document.querySelector('.back-to-top');
+            if (backToTopButton) {
+                window.addEventListener('scroll', function () {
+                    if (window.pageYOffset > 300) {
+                        backToTopButton.classList.add('active');
+                    } else {
+                        backToTopButton.classList.remove('active');
+                    }
+                });
+
+                backToTopButton.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+
+            // Header scroll effect
+            const header = document.querySelector('.main-header');
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    header?.classList.add('scrolled');
+                } else {
+                    header?.classList.remove('scrolled');
+                }
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+
+                    const navbarCollapse = document.getElementById('navbarNav');
+                    if (navbarCollapse?.classList.contains('show')) {
+                        const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+                        bsCollapse.hide();
+                    }
+                });
+            });
+
+            // Registration form submission
+            const form = document.getElementById('registration-form');
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    if (!form.checkValidity()) {
+                        e.stopPropagation();
+                        form.classList.add('was-validated');
+                        return;
+                    }
+
+                    const formData = new FormData(form);
+
+                    fetch('register.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        const thankYouModal = new bootstrap.Modal(document.getElementById('thankYouModal'));
+                        const modalTitle = document.getElementById('thankYouModalLabel');
+                        const modalBody = document.querySelector('#thankYouModal .modal-body');
+    
+                        if (data.status === 'already_registered') {
+                            modalTitle.textContent = "Already Registered";
+                            modalBody.textContent = "You have already registered for the summit. Check your email for confirmation.";
+                        } else if (data.status === 'success') {
+                            modalTitle.textContent = "Registration Complete";
+                            modalBody.innerHTML = `
+                                🎉 Thank you for registering for the summit!<br><br>
+                                📧 We've sent a confirmation email to the address you provided.<br><br>
+                                👉 <strong>Please check your Inbox, Spam, or Promotions folders.</strong><br><br>
+                                ✅ To ensure future emails reach you:  
+                                - Mark our email as "Not Spam" or "Move to Inbox".<br>
+                                - Add <strong>no-reply@dislesotho.com</strong> to your contacts/safe sender list.<br><br>
+                                🚀 This helps Google and other email providers recognize us as a trusted sender.
+                            `;
+                            form.reset();
+                            form.classList.remove('was-validated');
+                        } else {
+                            modalTitle.textContent = "Error";
+                            modalBody.textContent = "Something went wrong. Please try again.";
+                        }
+    
+                        thankYouModal.show();
+                        setTimeout(() => {
+                            thankYouModal.hide();
+                        }, 10000);
+                    })
+                    .catch(error => {
+                        alert("An error occurred. Please try again.");
+                        console.error(error);
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

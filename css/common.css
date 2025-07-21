@@ -1,0 +1,407 @@
+/* ===== COMMON STYLES ===== */
+:root {
+  --primary-color: #4a148c;
+  --secondary-color: #7b1fa2;
+  --accent-color: #e91e63;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+  padding-top: 70px;
+  position: relative;
+}
+
+/* Header & Navigation */
+.main-header {
+  background-color: white;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 60px;
+  transition: all 0.3s ease;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navbar-brand img {
+  transition: all 0.3s ease;
+  transform: rotate(90deg);
+  max-height: 75px;
+  object-fit: contain;
+  margin-top: -5;
+  margin-bottom: -5;
+  padding-top: -5;
+  padding-bottom: -5;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-link {
+  font-weight: 600;
+  color: var(--primary-color);
+  padding: 10px 15px !important;
+}
+
+.nav-link:hover {
+    color: var(--secondary-color);
+}
+
+/* Custom Active State for Home */
+.nav-link.active-home {
+    position: relative;
+    color: var(--primary-color) !important;
+}
+
+.nav-link.active-home .nav-link-inner {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-link.active-home .nav-link-inner::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--secondary-color);
+    transform: scaleX(1);
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for other nav items */
+.nav-link:not(.active-home):hover {
+    color: var(--secondary-color) !important;
+} 
+
+.navbar {
+  padding-top: 0.25rem;  /* try 0 or smaller values */
+  padding-bottom: 0.25rem;
+}
+
+.dropdown-menu {
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+}
+
+.dropdown-item {
+    font-weight: 500;
+    padding: 8px 20px;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(123, 31, 162, 0.1);
+    color: var(--secondary-color);
+}
+
+#announcement-banner { padding-top:0.25rem; padding-bottom:0.25rem; }
+#announcement-collapse .px-2 { padding-left:0.5rem; padding-right:0.5rem; }
+#announcement-collapse .py-1 { padding-top:0.25rem; padding-bottom:0.25rem; }
+#announcement-collapse strong { font-size:0.9rem; }
+#announcement-collapse span { font-size:0.85rem; }
+#announcement-collapse .btn-sm { font-size:0.75rem; padding:0.25rem 0.5rem; }
+#toggle-announcement { font-size:1rem; width:24px; height:24px; line-height:24px; padding:0; }
+
+/* Footer */
+.main-footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 40px 0 0;
+}
+
+.footer-logo {
+    height: 60px;
+    margin-bottom: 15px;
+    background-color: aliceblue;
+    border-radius: 20%;
+    max-width: 100%;
+}
+
+.footer-about {
+    opacity: 0.7;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.footer-links h5 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a:hover {
+    color: white;
+    padding-left: 5px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+}
+
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 999;
+}
+
+.back-to-top.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Buttons */
+.btn {
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.btn-primary {
+  background-color: var(--secondary-color);
+}
+
+/* Section titles */
+.section-title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 576px) {
+    .hero-section h1 {
+        font-size: 2.3rem;
+    }
+    
+    .hero-section .lead {
+        font-size: 1.1rem;
+    }
+    
+    .countdown-number {
+        font-size: 1.8rem;
+    }
+    
+    .session-card .card-title,
+    .summit-card .card-title {
+        font-size: 1.2rem;
+    }
+    
+    .cta-section h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-section {
+        padding: 100px 0;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero-section .lead {
+        font-size: 1.3rem;
+    }
+    
+    .live-section,
+    .sessions-section,
+    .universities-section,
+    .past-summits-section,
+    .testimonials-section,
+    .cta-section {
+        padding: 60px 0;
+    }
+    
+    .countdown-number {
+        font-size: 2rem;
+    }
+    
+    .session-card .card-img-top,
+    .summit-card .card-img-top {
+        height: 200px;
+    }
+    
+    .session-card .card-title,
+    .summit-card .card-title {
+        font-size: 1.3rem;
+    }
+    
+    .cta-section h2 {
+        font-size: 2.3rem;
+    }
+    
+    .footer-logo {
+        height: 70px;
+    }
+}
+
+@media (min-width: 992px) {
+    .hero-section {
+        padding: 120px 0;
+    }
+    
+    .hero-section h1 {
+        font-size: 3.2rem;
+    }
+    
+    .hero-section .lead {
+        font-size: 1.4rem;
+        max-width: 700px;
+    }
+    
+    .live-section,
+    .sessions-section,
+    .universities-section,
+    .past-summits-section,
+    .testimonials-section,
+    .cta-section {
+        padding: 80px 0;
+    }
+    
+    .countdown-number {
+        font-size: 2.3rem;
+    }
+    
+    .session-card .card-img-top,
+    .summit-card .card-img-top {
+        height: 220px;
+    }
+    
+    .cta-section h2 {
+        font-size: 2.8rem;
+    }
+    
+    .cta-section p {
+        max-width: 700px;
+        font-size: 1.1rem;
+    }
+    
+    .footer-logo {
+        height: 80px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero-section h1 {
+        font-size: 3.5rem;
+    }
+    
+    .live-section,
+    .sessions-section,
+    .universities-section,
+    .past-summits-section,
+    .testimonials-section,
+    .cta-section {
+        padding: 100px 0;
+    }
+    
+    .cta-section h2 {
+        font-size: 3rem;
+    }
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 575.98px) {
+    .navbar-brand img {
+        height: 35px;
+    }
+    
+    .hero-section {
+        padding: 70px 0;
+        min-height: 90vh;
+    }
+    
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-section .lead {
+        font-size: 1rem;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    .countdown-number {
+        font-size: 1.3rem;
+        min-width: 40px;
+    }
+    
+    .countdown-item {
+        min-width: 50px;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .section-title::after {
+        width: 60px;
+        height: 3px;
+    }
+    
+    .footer-links {
+        margin-bottom: 20px;
+    }
+    
+    .footer-bottom .row > div {
+        text-align: center !important;
+    }
+    
+    .footer-bottom .text-md-end {
+        text-align: center !important;
+        margin-top: 10px;
+    }
+    
+    /* Ensure images don't overflow */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}

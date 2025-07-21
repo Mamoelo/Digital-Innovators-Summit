@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/PNGG.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-body">
+  <div class="login-container">
+    <h1>Admin Login</h1>
+    <form id="login-form">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required>
+      </div>
+      <button type="submit">Login</button>
+      <div id="error-message" class="error"></div>
+    </form>
+  </div>
+  
+  <div id="dashboard" class="hidden">
+    
+    <div class="container">
+      <!-- Sidebar / Navigation Panel -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <!-- You can swap this out for your own logo -->
+          <div class="logo">
+            <img src="https://via.placeholder.com/24" alt="Logo" />
+            <span>sky alpha</span>
+          </div>
+          <button class="collapse-btn" aria-label="Collapse sidebar">
+            <!-- simple arrow icon; replace if you want -->
+            &lt;
+          </button>
+        </div>
+
+        <!-- New Navigation Group -->
+        <nav class="nav-group">
+          <h5 class="nav-group-title">NAVIGATION</h5>
+          <ul class="nav-list">
+            <!-- Update content -->
+            <li class="nav-item">
+              <a href="#" role="button" id="update-content">
+                <svg
+                  class="nav-icon"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                >
+                  <path
+                    d="M3 21v-3.75L16.03 4.22a1 1 0 0 1 1.41 0l2.34 2.34a1 1 0 0 1 0 1.41L6.75 21H3zM20.71 7.04l-2.34-2.34 1.59-1.59a.996.996 0 1 1 1.41 1.41l-1.66 1.66z"
+                    stroke="currentColor"
+                    fill="none"
+                  />
+                </svg>
+                <span class="nav-text" id="update-content">Update content</span>
+              </a>
+            </li>
+            <!-- See comments -->
+            <li class="nav-item">
+              <a href="#" role="button" id="see-comments">
+                <svg
+                  class="nav-icon"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                >
+                  <path
+                    d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z"
+                    stroke="currentColor"
+                    fill="none"
+                  />
+                </svg>
+                <span class="nav-text" id="see-comments">See comments</span>
+              </a>
+            </li>
+            <!-- Statistics -->
+            <li class="nav-item">
+              <a href="#" role="button" id="Statistics">
+                <svg
+                  class="nav-icon"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                >
+                  <rect
+                    x="4"
+                    y="10"
+                    width="4"
+                    height="10"
+                    stroke="currentColor"
+                    fill="none"
+                  />
+                  <rect
+                    x="10"
+                    y="4"
+                    width="4"
+                    height="16"
+                    stroke="currentColor"
+                    fill="none"
+                  />
+                  <rect
+                    x="16"
+                    y="14"
+                    width="4"
+                    height="6"
+                    stroke="currentColor"
+                    fill="none"
+                  />
+                </svg>
+                <span class="nav-text" id="Statistics">Statistics</span>
+              </a>
+            </li>
+            <!-- Live streaming -->
+            <li class="nav-item">
+              <a href="#" role="button" id="stream">
+                <svg
+                  class="nav-icon"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                >
+                  <rect
+                    x="3"
+                    y="6"
+                    width="12"
+                    height="12"
+                    stroke="currentColor"
+                    fill="none"
+                  />
+                  <path
+                    d="M17 10.5l4-2.5v8l-4-2.5V10.5z"
+                    stroke="currentColor"
+                    fill="none"
+                  />
+                </svg>
+                <span class="nav-text">Live streaming</span>
+              </a>
+            </li>
+            <!-- Add event -->
+            <li class="nav-item">
+              <a href="#" role="button" id="add-event">
+                <svg
+                  class="nav-icon"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                >
+                  <rect
+                    x="3"
+                    y="4"
+                    width="18"
+                    height="18"
+                    stroke="currentColor"
+                    fill="none"
+                  />
+                  <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" />
+                  <line x1="16" y1="14" x2="16" y2="20" stroke="currentColor" />
+                  <line x1="13" y1="17" x2="19" y2="17" stroke="currentColor" />
+                </svg>
+                <span class="nav-text" id="add-event">Add event</span>
+              </a>
+            </li>
+            <!-- Logout -->
+            <li class="nav-item">
+              <a href="#" role="button" id="logout-btn">
+                <svg
+                  class="nav-icon"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                >
+                  <path d="M16 17l5-5-5-5" stroke="currentColor" fill="none" />
+                  <path d="M21 12H9" stroke="currentColor" />
+                  <path
+                    d="M12 19H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h7"
+                    stroke="currentColor"
+                    fill="none"
+                  />
+                </svg>
+                <span class="nav-text">Logout</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Spacer to push version to bottom -->
+        <div class="sidebar-spacer"></div>
+
+        <!-- Version Info -->
+        <div class="sidebar-footer">
+          <span>sky alpha</span>
+        </div>
+      </aside>
+
+      <!-- Main Content Area (empty for now) -->
+      <div class="main-content">
+        <!-- You can populate this section with whatever you need -->
+        <header class="main-header">
+          <div class="header-left">
+            <button class="menu-toggle" aria-label="Toggle Sidebar">☰</button>
+            <div>
+              <h1>Admin Dashboard</h1>
+              <div class="admin-info">
+                <p>Welcome, <span id="admin-username"></span>!</p>
+                <p>Your role: <span id="admin-role"></span></p>
+              </div>
+            </div>
+          </div>
+          <div class="header-right">
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Search for an entry..."
+            />
+            <button class="roles-btn">Roles ▾</button>
+            <div class="profile-dropdown">
+              <img
+                src="https://via.placeholder.com/32"
+                alt="Admin Profile"
+                class="profile-avatar"
+              />
+              <span>Admin Name</span>
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </div>
+          </div>
+        </header>
+
+        <main class="content-area">
+          <!-- Example Page Title -->
+          <section class="page-header">
+            <h2>Roles</h2>
+            <button class="btn-add-new">+ Add new role</button>
+          </section>
+
+          <!-- Example Table of Roles -->
+          <section class="table-section">
+            <table class="roles-table">
+              <thead>
+                <tr>
+                  <th>Role</th>
+                  <th>Description</th>
+                  <th>Users</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Author</td>
+                  <td>Authors can manage the content they have created…</td>
+                  <td>0 user</td>
+                  <td>
+                    <button class="action-btn">Copy</button>
+                    <button class="action-btn">Edit</button>
+                    <button class="action-btn-delete">Delete</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Editor</td>
+                  <td>Editors can manage and publish contents i…</td>
+                  <td>0 user</td>
+                  <td>
+                    <button class="action-btn">Copy</button>
+                    <button class="action-btn">Edit</button>
+                    <button class="action-btn-delete">Delete</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Super Admin</td>
+                  <td>Super Admins can access and manage all f…</td>
+                  <td>1 user</td>
+                  <td>
+                    <button class="action-btn">Copy</button>
+                    <button class="action-btn">Edit</button>
+                    <button class="action-btn-delete">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

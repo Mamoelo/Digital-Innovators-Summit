@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Stream | Digital Innovators Summit | SkyAlpha HD</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/PNGG.png">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Common CSS -->
+    <!-- <link rel="stylesheet" href="css/common.css"> -->
+    
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="css/live.css">
+  </head>
+  <body>
+    <!-- </header> -->
+    <div id="header-container"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-8">
+            <span class="hero-badge">Live Now</span>
+            <h1>Digital Innovators Summit 2025 Live Stream</h1>
+            <p class="lead">
+              Watch the summit sessions live as they happen. Join the
+              conversation and be part of shaping Lesotho's digital future.
+            </p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="#live-stream" class="btn btn-light btn-lg">Watch Now</a>
+              <a href="#chat" class="btn btn-outline-light btn-lg">Join Chat</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live Stream Section -->
+    <section class="live-section" id="live-stream">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="mb-3">Live Stream</h2>
+            <p class="lead text-muted">
+              Watch the current sessions happening right now
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-8 mb-4 mb-lg-0">
+            <div class="video-container">
+              <div class="live-badge">
+                <i class="fas fa-circle me-2"></i> LIVE NOW
+              </div>
+              <iframe
+                src="https://www.youtube.com/embed/5J_WZFZ34wk"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="countdown-timer">
+              <h4 class="mb-4">Next Session Starts In:</h4>
+              <div class="countdown-container">
+                <div class="countdown-item">
+                  <div class="countdown-number" id="days">00</div>
+                  <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-item">
+                  <div class="countdown-number" id="hours">00</div>
+                  <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-item">
+                  <div class="countdown-number" id="minutes">00</div>
+                  <div class="countdown-label">Minutes</div>
+                </div>
+              </div>
+              <div class="mt-4">
+                <h5 class="mb-3">Up Next:</h5>
+                <p class="mb-1">
+                  <strong>Digital Transformation in Higher Education</strong>
+                </p>
+                <p class="mb-3">
+                  Dr. Thabo Mokoena, National University of Lesotho
+                </p>
+                <a href="event.ics" download class="btn btn-outline-light w-100"
+                  >Add to Calendar</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chat Section -->
+    <section class="chat-section" id="chat">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="mb-3">Live Chat</h2>
+            <p class="lead text-muted">
+              Join the conversation with other attendees
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="chat-container">
+              <div class="chat-header">
+                <i class="fas fa-comments me-2"></i> Summit Chat
+              </div>
+              <div class="chat-messages" id="chat-messages">
+                <div class="message">
+                  <div>
+                    <span class="message-user">Moderator:</span>
+                    <span class="message-time">10:15 AM</span>
+                  </div>
+                  <div class="message-content">
+                    Welcome everyone to the Digital Innovators Summit 2025 live
+                    chat! Please keep conversations respectful and on-topic.
+                  </div>
+                </div>
+                <div class="message">
+                  <div>
+                    <span class="message-user">Teboho_M:</span>
+                    <span class="message-time">10:17 AM</span>
+                  </div>
+                  <div class="message-content">
+                    Excited to be here! The keynote was amazing.
+                  </div>
+                </div>
+                <div class="message">
+                  <div>
+                    <span class="message-user">Lerato_NUL:</span>
+                    <span class="message-time">10:19 AM</span>
+                  </div>
+                  <div class="message-content">
+                    Does anyone know if the slides will be available after the
+                    session?
+                  </div>
+                </div>
+                <div class="message">
+                  <div>
+                    <span class="message-user">Moderator:</span>
+                    <span class="message-time">10:20 AM</span>
+                  </div>
+                  <div class="message-content">
+                    Yes, all presentation materials will be available on our
+                    website after the summit.
+                  </div>
+                </div>
+              </div>
+              <div class="chat-input">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Type your message..."
+                    id="chat-input"
+                  />
+                  <button
+                    class="btn btn-primary"
+                    type="button"
+                    id="send-message"
+                  >
+                    <i class="fas fa-paper-plane"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section class="schedule-section" id="schedule">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="mb-3">Today's Schedule</h2>
+            <p class="lead text-muted">June 10, 2025 - Day 1</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="schedule-item active">
+              <div class="schedule-time">09:00 - 10:30</div>
+              <h5 class="schedule-title">
+                Opening Keynote: The Future of Digital Innovation in Lesotho
+              </h5>
+              <div class="schedule-speaker">
+                Hon. Minister of Communications, Science and Technology
+              </div>
+            </div>
+
+            <div class="schedule-item">
+              <div class="schedule-time">11:00 - 12:30</div>
+              <h5 class="schedule-title">AI Talent and Higher Education</h5>
+              <div class="schedule-speaker">
+                Prof. Mosotho George, National University of Lesotho
+              </div>
+            </div>
+
+            <div class="schedule-item">
+              <div class="schedule-time">14:00 - 15:30</div>
+              <h5 class="schedule-title">Policy Foundations for AI</h5>
+              <div class="schedule-speaker">Mr Kanono Ramashamole, MICSTI</div>
+            </div>
+
+            <div class="schedule-item">
+              <div class="schedule-time">16:00 - 17:30</div>
+              <h5 class="schedule-title">
+                Panel Discussion: Ethical AI Implementation
+              </h5>
+              <div class="schedule-speaker">
+                Representatives from NUL, Botho University, and Limkokwing
+              </div>
+            </div>
+
+            <div class="text-center mt-4">
+              <a href="schedule.html" class="btn btn-primary"
+                >View Full Schedule</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <a
+              href="https://www.skyalphahd.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="images/logos/skyalpha.png"
+                alt="SkyAlpha HD"
+                class="footer-logo"
+              />
+            </a>
+            <p class="footer-about">
+              Aligned with Lesotho's National Digital Transformation Strategy,
+              the Digital Innovators Summit is a movement toward creating a
+              digitally empowered society.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/DigitalInnovatorsSummitLesotho"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://twitter.com/DIS_Lesotho2025"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/digitalinnovatorslesotho"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/company/digital-innovators-summit-lesotho"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a
+                href="https://www.youtube.com/c/DigitalInnovatorsSummitLesotho"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <div class="footer-links">
+              <h5>Summits</h5>
+              <ul>
+                <li>
+                  <a class="dropdown-item" href="2024Summit.html">2024 Summit</a>
+                </li>   
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <div class="footer-links">
+              <h5>Event</h5>
+              <ul>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="speakers.html">Speakers</a></li>
+                <li><a href="sessions.html">Sessions</a></li>
+                <li><a href="live.html">Live Stream</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <div class="footer-links">
+              <h5>Partners</h5>
+              <ul>
+                <li><a href="universities.html">Universities</a></li>
+                <li><a href="partners.html">Organizations</a></li>
+                <li><a href="sponsors.html">Sponsors</a></li>
+                <li><a href="collaborators.html">Collaborators</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4">
+            <div class="footer-links">
+              <h5>Contact</h5>
+              <ul>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="faq.html">FAQs</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <p class="copyright mb-3 mb-md-0">
+                  © 2025 Digital Innovators Summit. All rights reserved.
+                </p>
+              </div>
+              <div class="col-md-6 text-md-end">
+                <a href="privacy.html" class="text-white-50 me-3"
+                  >Privacy Policy</a
+                >
+                <a href="terms.html" class="text-white-50">Terms of Service</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Common JS -->
+    <script src="js/common.js"></script>
+    
+    <!-- Page-specific JS -->
+    <script src="js/live.js"></script>
+
+    <!-- Live-schedule-specific JS -->
+    <script src="js/live-schedule.js"></script>
+  </body>
+</html>

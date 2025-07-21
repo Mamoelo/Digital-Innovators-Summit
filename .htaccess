@@ -1,0 +1,17 @@
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/dislyffo/public_html/backend"
+PassengerBaseURI "/"
+PassengerNodejs "/home/dislyffo/nodevenv/public_html/backend/20/bin/node"
+PassengerAppType node
+PassengerStartupFile Server.js
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION BEGIN
+<IfModule Litespeed>
+SetEnv DB_HOST localhost
+SetEnv DB_PASSWORD 24e4fcb6$MK1!q
+SetEnv JWT_ISSUER dislesotho.com
+SetEnv JWT_SECRET W1SwGHe+S6SSNRpCPfnPZKFBLRmWA5wVHGPbxKFAIYbLw0dmG9j8+xYFg9FAGYVs0T5f0qQQcOJ65Rx0GLd6yQ==
+SetEnv DB_DATABASE disyffo_dis_lesotho
+SetEnv DB_USER dislyffo_KevinMk
+</IfModule>
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION END

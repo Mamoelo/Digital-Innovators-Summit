@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Summit Speakers | Digital Innovators Summit</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary-dark: #2e005f;
+            --primary-light: #7b1fa2;
+            --accent: #e91e63;
+            --tech-blue: #0a0a23;
+            --neon-purple: #b721ff;
+            --neon-pink: #f05;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            background-color: var(--tech-blue);
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Futuristic Header */
+        .main-header {
+            background: rgba(10, 10, 35, 0.85);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar-brand img {
+            height: 40px;
+            filter: drop-shadow(0 0 10px rgba(183, 33, 255, 0.5));
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0 8px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: white;
+            text-shadow: 0 0 10px rgba(183, 33, 255, 0.7);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--neon-purple), var(--neon-pink));
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        .btn-register {
+            background: linear-gradient(45deg, var(--neon-purple), var(--neon-pink));
+            border: none;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 5px 15px rgba(183, 33, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-register:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(183, 33, 255, 0.6);
+        }
+
+        /* Hero Section with Animated Gradient - UPDATED */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-dark), var(--tech-blue));
+            position: relative;
+            overflow: hidden;
+            padding: 150px 0; /* Increased padding */
+            min-height: 80vh; /* Added min-height */
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(183, 33, 255, 0.15) 0%, rgba(10, 10, 35, 0) 70%);
+            animation: gradient-pulse 15s infinite alternate;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, white, #d1b3ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 5px 15px rgba(46, 0, 95, 0.3);
+            margin-bottom: 1.5rem; /* Added margin */
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 2rem; /* Adjusted margins */
+            line-height: 1.6; /* Improved readability */
+        }
+
+        /* Speaker Cards with Hover Effects - UPDATED */
+        .speaker-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            height: 100%;
+        }
+
+        .speaker-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 65%, rgba(183, 33, 255, 0.1) 100%);
+            z-index: 1;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(46, 0, 95, 0.4);
+            border-color: rgba(183, 33, 255, 0.3);
+        }
+        
+        .speaker-img-container {
+            height: 320px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Changed to push content up */
+            background: rgba(0,0,0,0.2);
+        }
+
+       .speaker-img {
+            width: 100%;
+            height: 130%; /* Increased height to allow more bottom cropping */
+            object-fit: cover;
+            object-position: center top; /* Prioritize keeping top visible */
+            transition: transform 0.8s ease;
+            transform-origin: center top; /* Scale from the top on hover */
+        }
+        .speaker-card:hover .speaker-img {
+            transform: scale(1.05) translateY(-2%); /* Slight upward shift on hover */
+        }
+
+
+
+        .speaker-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, var(--accent), #ff2d75);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+            box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
+        }
+
+        .speaker-content {
+            padding: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .speaker-name {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            background: linear-gradient(90deg, white, #d1b3ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .speaker-title {
+            font-size: 1rem;
+            color: var(--neon-purple);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .speaker-org {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .speaker-bio {
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6; /* Improved readability */
+        }
+
+        .btn-view-profile {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(183, 33, 255, 0.3);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .btn-view-profile:hover {
+            background: rgba(183, 33, 255, 0.2);
+            border-color: var(--neon-purple);
+            transform: translateY(-2px);
+        }
+
+        .speaker-social {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .speaker-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .speaker-social a:hover {
+            background: var(--neon-purple);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(183, 33, 255, 0.3);
+        }
+
+        /* Section Titles */
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, white, #d1b3ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--neon-purple), var(--neon-pink));
+            border-radius: 3px;
+        }
+
+        /* Floating Tech Elements */
+        .tech-circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--neon-purple);
+            top: 10%;
+            left: 5%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .circle-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--accent);
+            bottom: 10%;
+            right: 5%;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        /* Footer Styles */
+        .main-footer {
+            background: linear-gradient(135deg, var(--primary-dark), var(--tech-blue));
+            color: white;
+            padding: 60px 0 0;
+            margin-top: auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-logo {
+            height: 50px;
+            margin-bottom: 20px;
+        }
+
+        .footer-about {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        .footer-links h5 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-links h5::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--neon-purple), var(--neon-pink));
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .social-links a:hover {
+            background: var(--neon-purple);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(183, 33, 255, 0.3);
+        }
+
+        .footer-bottom {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px 0;
+            margin-top: 40px;
+            font-size: 0.8rem;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(30px, 30px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        @keyframes gradient-pulse {
+            0% { transform: rotate(0deg); opacity: 0.1; }
+            50% { opacity: 0.2; }
+            100% { transform: rotate(360deg); opacity: 0.1; }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 991.98px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-section {
+                padding: 120px 0;
+                min-height: auto;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .speaker-img-container {
+                height: 280px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .hero-title {
+                font-size: 2.3rem;
+            }
+            
+            .hero-section {
+                padding: 100px 0;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .speaker-img-container {
+                height: 250px;
+            }
+            
+            .footer-links {
+                margin-bottom: 30px;
+            }
+
+            .speaker-img-container {
+                height: 250px;
+            }
+            .speaker-img {
+                height: 120%;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .speaker-name {
+                font-size: 1.4rem;
+            }
+
+            .speaker-img {
+                height: 115%;
+            }
+            
+            .speaker-img-container {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Futuristic Header -->
+    <header class="main-header sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark py-3">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src='Th19JuneNow/images/logos/LOGO FILE1-07.png' alt="SkyAlpha HD">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="summitsDropdown" role="button" data-bs-toggle="dropdown">
+                                Summits
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="2024Summit.html">2024 Summit</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="past-summits.html">All Summits</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="live.html">Live</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" id="eventDropdown" role="button" data-bs-toggle="dropdown">
+                                Event
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="live.html">Live</a></li>
+                                <li><a class="dropdown-item" href="sessions.html">Sessions</a></li>
+                                <li><a class="dropdown-item" href="schedule.html">Schedule</a></li>
+                                <li><a class="dropdown-item active" href="speakers.html">Speakers</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="universities.html">Universities</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="partnersDropdown" role="button" data-bs-toggle="dropdown">
+                                Partners
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="universities.html">Universities</a></li>
+                                <li><a class="dropdown-item" href="collaborators.html">Collaborators</a></li>
+                                <li><a class="dropdown-item" href="sponsors.html">Sponsors</a></li>
+                                <li><a class="dropdown-item" href="developers.html">Developers</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" data-bs-toggle="dropdown">
+                                Contact
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="contact.html">Contact Us</a></li>
+                                <li><a class="dropdown-item" href="team.html">Our Team</a></li>
+                                <li><a class="dropdown-item" href="faq.html">FAQs</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                    </ul>
+                    <a href="register.html" class="btn btn-register ms-lg-3">Register Now</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Animated Background - UPDATED -->
+    <section class="hero-section">
+        <div class="tech-circle circle-1"></div>
+        <div class="tech-circle circle-2"></div>
+        
+        <div class="container hero-content">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-10">
+                    <h1 class="hero-title animate__animated animate__fadeInDown">2025 Summit Speakers</h1>
+                    <p class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">
+                        Meet the visionaries and innovators who will shape the future of digital transformation in Africa.
+                        These thought leaders bring cutting-edge expertise and groundbreaking ideas to the 2025 Digital Innovators Summit.
+                    </p>
+                    <div class="mt-5 animate__animated animate__fadeInUp animate__delay-2s">
+                        <a href="#speakers" class="btn btn-register btn-lg me-3">Explore Speakers</a>
+                        <a href="schedule.html" class="btn btn-outline-light btn-lg">View Schedule</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Speakers Section -->
+    <section class="py-5 position-relative" id="speakers" style="background: linear-gradient(180deg, #0a0a23 0%, #2e005f 100%);">
+        <div class="container py-5 position-relative" style="z-index: 2;">
+            <div class="text-center mb-5">
+                <div class="section-title">
+                    <h2 class="animate__animated animate__fadeIn">Featured Speakers</h2>
+                </div>
+                <p class="lead mb-4 animate__animated animate__fadeIn animate__delay-1s">
+                    Discover the brilliant minds leading Africa's digital revolution
+                </p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Speaker 1 -->
+                <div class="col-lg-4 col-md-6 animate__animated animate__fadeInUp">
+                    <div class="speaker-card">
+                        <div class="speaker-img-container">
+                            <img src='Th19JuneNow/images/people/Tsepiso.jpeg' alt="Tsepiso Mokobori" class="speaker-img">
+                        </div>
+                        <div class="speaker-content">
+                            <h3 class="speaker-name">Tsepiso Mokobori</h3>
+                            <p class="speaker-bio">Tsepiso Mokobori works at a natively onchain gaming tech company and contributes to a public goods initiative led
+                                 by young African developers building tools to tackle the continent's biggest challenges through emerging internet technologies.
+                                She advocates for open-source, decentralised tech, inclusive education, and communities empowered by honest, evolving technology.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Speaker 2 -->
+                <div class="col-lg-4 col-md-6 animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="speaker-card">
+                        <div class="speaker-img-container">
+                            <img src="Th19JuneNow/images/people/Sam.jpeg" alt="Mr Sam Mohatle" class="speaker-img">
+                        </div>
+                        <div class="speaker-content">
+                            <h3 class="speaker-name">Mr. Sam Mohatle</h3>
+                            <span class="speaker-title">Head of digital Banking, FNB Lesotho</span>
+                            <p class="speaker-bio">Mr. Sam Mohatle is Head of Digital Banking at FNB Lesotho with 15+ years' experience in fintech, 
+                                IT, and banking. He leads the bank's digitisation efforts and champions financial inclusion through innovative 
+                                models like CashPlus. Sam is passionate about SMME empowerment and regularly speaks at international fintech and 
+                                banking forums.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Speaker 3 -->
+                <div class="col-lg-4 col-md-6 animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="speaker-card">
+                        <div class="speaker-img-container">
+                            <img src="Th19JuneNow/images/people/Phello.jpeg" alt="Mr. Phello Ralibakha" class="speaker-img">
+                        </div>
+                        <div class="speaker-content">
+                            <h3 class="speaker-name">Mr. Phello Ralibakha</h3>
+                            <span class="speaker-title">ITSM Manager LNIG Hollard</span>
+                            <p class="speaker-bio">Phello is a digital transformation leader with over six years' experience, currently 
+                                serving as ITSM Manager at LNIG Hollard. With a Computer Science degree and MBA studies underway, he drives 
+                                innovation at the intersection of tech and business, focusing on AI in financial services. A strong advocate 
+                                for "Trust and Inspire" leadership, he champions inclusive, people-first approaches to digital change.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Speaker 4 -->
+                <div class="col-lg-4 col-md-6 animate__animated animate__fadeInUp">
+                    <div class="speaker-card">
+                        <div class="speaker-img-container">
+                            <img src="Th19JuneNow/images/people/Joshua.jpeg" alt="Mr. Joshua Phoho Setipa" class="speaker-img">
+                        </div>
+                        <div class="speaker-content">
+                            <h3 class="speaker-name">Mr. Joshua Phoho Setipa</h3>
+                            <span class="speaker-title">Former Managing Director, UN Technology Bank for Least Developed Countries</span>
+                            <p class="speaker-bio">Mr. Setipa is a development and innovation leader with over 20 years' experience in trade,
+                                 economic policy, and international partnerships. As the first Managing Director of the UN Technology Bank, 
+                                 he launched innovation labs and built global partnerships, including with NASA's Jet Propulsion Lab. He 
+                                 previously served as Lesotho's Minister of Trade and Industry, CEO of the Lesotho National Development 
+                                 Corporation, and Senior Advisor to the WTO Director-General. He also held leadership roles at the World Bank.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Speaker 5 -->
+                <div class="col-lg-4 col-md-6 animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="speaker-card">
+                        <div class="speaker-img-container">
+                            <img src="Th19JuneNow/images/people/zanele.png" alt="Zanele Selenalo" class="speaker-img">
+                        </div>
+                        <div class="speaker-content">
+                            <h3 class="speaker-name">Zanele Selebalo</h3>
+                            <p class="speaker-bio">Zanele Selebalo is a dynamic Mosotho digital innovator, cybersecurity analyst, and web/app
+                                developer, passionately driving Africa's tech evolution. Currently serving as Chief Services Officer at 
+                                Selemela Learning Network, she leads strategic digital transformation initiatives that
+                                empower young people through education, innovation, and inclusion.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Speaker 6 -->
+                <div class="col-lg-4 col-md-6 animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="speaker-card">
+                        <div class="speaker-img-container">
+                            <img src="images/people/profile.png" alt="Lerato Molisana" class="speaker-img">
+                        </div>
+                        <div class="speaker-content">
+                            <h3 class="speaker-name">Lerato Molisana</h3>
+                            <p class="speaker-bio">Lerato Molisana is a Maths confidence coach, educator and writer who is refinding how we 
+                                teach, learn and relate to Mathematics. With a bacground in Mathemstical Statistics and a MFA in Creative Writing, She
+                                brings a rare fusion of analytical thinking and narattive intelligence to her work.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 7 -->
+                <div class="col-lg-4 col-md-6 animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="speaker-card">
+                        <div class="speaker-img-container">
+                            <img src="images/people/H.E Harry Macdonald.jpeg" alt="H.E Harry MacDonald" class="speaker-img">
+                        </div>
+                        <div class="speaker-content">
+                            <h3 class="speaker-name">H.E Harry MacDonald</h3>
+                            <span class="speaker-title">British High Commissioner</span>
+                            <p class="speaker-bio">"Digital Diplomacy in the Age of Disinformation: Upholding Ethics, Trust, and Global Coperation"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5 pt-4 animate__animated animate__fadeIn animate__delay-3s">
+                <p class="lead mb-4">Want to join these amazing speakers?</p>
+                <a href="contact.html" class="btn btn-outline-light btn-lg me-3">Contact Us</a>
+                <a href="register.html" class="btn btn-register btn-lg">Register Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="row">
+                <div class="col-lg-4 mb-5">
+                    <img src="images/logos/skyalpha.png" alt="Digital Innovators Summit" class="footer-logo">
+                    <p class="footer-about">
+                        The Digital Innovators Summit is Lesotho's premier technology conference, bringing together thought leaders,
+                        innovators, and change-makers to shape Africa's digital future.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-5">
+                    <div class="footer-links">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="speakers.html">Speakers</a></li>
+                            <li><a href="schedule.html">Schedule</a></li>
+                            <li><a href="register.html">Register</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-5">
+                    <div class="footer-links">
+                        <h5>Event Info</h5>
+                        <ul>
+                            <li><a href="venue.html">Venue</a></li>
+                            <li><a href="travel.html">Travel & Accommodation</a></li>
+                            <li><a href="faq.html">FAQs</a></li>
+                            <li><a href="code-of-conduct.html">Code of Conduct</a></li>
+                            <li><a href="sponsors.html">Sponsors</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-5">
+                    <div class="footer-links">
+                        <h5>Contact Us</h5>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt me-2"></i> Maseru, Lesotho</li>
+                            <li><i class="fas fa-phone me-2"></i> +266 1234 5678</li>
+                            <li><i class="fas fa-envelope me-2"></i> info@digitalinnovators.ls</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start">
+                            <p class="mb-0">&copy; 2025 Digital Innovators Summit. All rights reserved.</p>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <a href="privacy.html" class="text-white me-3">Privacy Policy</a>
+                            <a href="terms.html" class="text-white">Terms of Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        // Initialize animations when elements come into view
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                $('.animate__animated').each(function() {
+                    var position = $(this).offset().top;
+                    var scroll = $(window).scrollTop();
+                    var windowHeight = $(window).height();
+                    
+                    if (scroll + windowHeight > position) {
+                        $(this).addClass($(this).data('animation'));
+                    }
+                });
+            }).scroll();
+            
+            // Ensure all images fit properly
+            $('.speaker-img').each(function() {
+                var $img = $(this);
+                var $container = $img.parent();
+                
+                // If image fails to load, set a fallback background
+                $img.on('error', function() {
+                    $(this).css({
+                        'background': 'linear-gradient(135deg, #2e005f, #0a0a23)',
+                        'display': 'flex',
+                        'align-items': 'center',
+                        'justify-content': 'center',
+                        'color': 'white',
+                        'font-size': '1rem',
+                        'text-align': 'center',
+                        'padding': '20px'
+                    });
+                    $(this).html('Speaker Image<br>Not Available');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
