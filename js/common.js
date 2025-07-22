@@ -40,7 +40,10 @@ function loadHeader() {
                 </a>
                 <ul class="dropdown-menu">
                   <li>
-                    <a class="dropdown-item" href="2024Summit.html">2024 Summit</a>
+                    <a class="dropdown-item" href="2024Summit_v1.html">2024 Summit</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="2025speakers.html">2025 Summit</a>
                   </li>
                   <li><hr class="dropdown-divider" /></li>
                   <li>
@@ -68,7 +71,7 @@ function loadHeader() {
                     <a class="dropdown-item" href="sessions.html">Sessions</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="schedule.html">Schedule</a>
+                    <a class="dropdown-item" href="schedule_v1.html">Schedule</a>
                   </li>
                   <li>
                     <a class="dropdown-item" href="speakers.html">Speakers</a>
@@ -122,7 +125,7 @@ function loadHeader() {
                     <a class="dropdown-item" href="contact.html">Contact Us</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="team.html">Our Team</a>
+                    <a class="dropdown-item" href="team_v1.html">Our Team</a>
                   </li>
                   <li>
                     <a class="dropdown-item" href="developers.html">Developers</a>
@@ -135,18 +138,18 @@ function loadHeader() {
                 <a class="nav-link" href="about.html">About</a>
               </li>
             </ul>
-            <a href="register.html" class="btn btn-primary ms-lg-3">Register Now</a>
+            <a href="register_v1.html" class="btn btn-primary ms-lg-3">Register Now</a>
           </div>
         </div>
       </nav>
       
       <!-- Announcement Banner -->
-      <div id="announcement-banner" class="bg-primary text-white text-center py-1"> <!-- was py-2 -->
+      <!-- <div id="announcement-banner" class="bg-primary text-white text-center py-1">
         <div id="announcement-collapse" class="collapse show">
           <div class="px-2 py-1 d-flex flex-column flex-md-row justify-content-center align-items-center">
             <strong class="me-md-2" style="font-size:0.9rem;">Registration for the 24th July 2025 Summit is now open!</strong>
             <span class="me-md-3" style="font-size:0.85rem;">You’ll receive an email and site notification once your registration is received.</span>
-            <a href="register.html" class="btn btn-light btn-sm" style="font-size:0.75rem; padding:0.25rem 0.5rem;">Register Now</a>
+            <a href="register_v1.html" class="btn btn-light btn-sm" style="font-size:0.75rem; padding:0.25rem 0.5rem;">Register Now</a>
           </div>
         </div>
 
@@ -160,21 +163,21 @@ function loadHeader() {
           aria-controls="announcement-collapse"
           style="font-size:1rem; width:24px; height:24px; line-height:24px; padding:0;"
         >▼</button>
-      </div>
+      </div> -->
     </header>`;
   
   // Toggle banner visibility with CSS class
-  const collapseEl = document.getElementById('announcement-collapse');
-  const toggleBtn  = document.getElementById('toggle-announcement');
+//   const collapseEl = document.getElementById('announcement-collapse');
+//   const toggleBtn  = document.getElementById('toggle-announcement');
 
-  collapseEl.addEventListener('show.bs.collapse', () => {
-    toggleBtn.textContent = '▼';  // down‑caret when expanded
-  });
-  collapseEl.addEventListener('hide.bs.collapse', () => {
-    toggleBtn.textContent = '▲';  // up‑caret when collapsed
-  });
+//   collapseEl.addEventListener('show.bs.collapse', () => {
+//     toggleBtn.textContent = '▼';  // down‑caret when expanded
+//   });
+//   collapseEl.addEventListener('hide.bs.collapse', () => {
+//     toggleBtn.textContent = '▲';  // up‑caret when collapsed
+//   });
 
-  setActiveNav();
+//   setActiveNav();
 }
 
 // Function to load footer
@@ -207,7 +210,8 @@ function loadFooter() {
             <div class="footer-links">
               <h5>Summits</h5>
               <ul>
-                <li><a href="2024Summit.html">2024 Summit</a></li>
+                <li><a href="2024Summit_v1.html">2024 Summit</a></li>
+                <li><a href="2025speaker.html">2025 Summit</a></li>
               </ul>
             </div>
           </div>
@@ -215,7 +219,7 @@ function loadFooter() {
             <div class="footer-links">
               <h5>Event</h5>
               <ul>
-                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="schedule_v1.html">Schedule</a></li>
                 <li><a href="speakers.html">Speakers</a></li>
                 <li><a href="sessions.html">Sessions</a></li>
                 <li><a href="live.html">Live Stream</a></li>
@@ -238,8 +242,8 @@ function loadFooter() {
               <h5>Contact</h5>
               <ul>
                 <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="team.html">Our Team</a></li>
-                <li><a href="register.html">Register</a></li>
+                <li><a href="team_v1.html">Our Team</a></li>
+                <li><a href="register_v1.html">Register</a></li>
                 <li><a href="faq.html">FAQs</a></li>
               </ul>
             </div>
